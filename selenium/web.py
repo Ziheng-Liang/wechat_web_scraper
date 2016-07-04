@@ -45,16 +45,15 @@ postArr = re.findall(r'href="(http:\/\/mp\..*?)"', articleString)
 print postArr
 
 
-
-
-with open('names.csv', 'w') as csvfile:
-    fieldnames = ['first_name', 'last_name']
+with open('ada.csv', 'w') as csvfile:
+    fieldnames = ['id', 'url']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
     writer.writeheader()
-    writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
-    writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-    writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+    for i in range(len(postArr)):
+    	nosym_url = re.sub(r'&amp;', '&', postArr[i])
+    	writer.writerow({'id': i, 'url': nosym_url})
+
 
 
 
