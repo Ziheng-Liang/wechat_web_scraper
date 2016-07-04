@@ -4,7 +4,7 @@ From [this post](http://stackoverflow.com/questions/29449982/installing-pyqt4-wi
 
 The next question would be how to simulate the "load more" event? Only sliding the page to the end can trigger the load more action.
 
-- One option is to use "selenium" to simulate the infinite scrolling event. Since we will be using chromedriver, use `brew install chromedriver` to install.
+- One option is to use "selenium" to simulate the infinite scrolling event. Since we will be using chromedriver, use `brew install chromedriver` to install. One of the handy thing about selenium is that it allows us to execute javascript script on the selected elements. Check [this post](http://stackoverflow.com/questions/21006940/how-to-load-all-entries-in-an-infinite-scroll-at-once-to-parse-the-html-in-pytho) for more information of how to simulate infinite scroll.
 
 - The other one is to simple inspect the difference url being used when scrolling happens, find the pattern. But in the wechat website exmple, this trick doesn't work.
 
