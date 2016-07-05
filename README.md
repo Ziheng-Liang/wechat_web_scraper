@@ -24,6 +24,9 @@ The next question would be how to simulate the "load more" event? Only sliding t
 
 After scraping all required static html content as string, we can do regex `findall` to find all matching urls from those three panels. Then save it to csv file. Then hand it to next step of fetching.
 
+With all urls in place, we use beautifulsoup to extract all nested texts from article into an array, then use `filter()` to filter out elements whose parent are styles, scripts and so on. *BeautifulSoup really comes in handy for scraping all texts.* Check [this post](http://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text) for more information. One problem encountered is the encoding, I have a "ascii not recognize" error, use `.encode('utf-8')\.decode('utf-8')` to work around with that. Remember that, *when we type weird characters like Chiese characters or Abraic characters, we use utf-8,* while we better deal with or string in unicode, the procedure of from normal string to unicode is called "decode", while the way to produce string back is called "encode". Check [this post](http://stackoverflow.com/questions/5096776/unicode-decodeutf-8-ignore-raising-unicodeencodeerror) for more illustration.
+
+
 ### content engine
 
 List all python dependencies in `conda.txt`, then run `conda create -n <virtual env's name> --file conda.txt` to create a new environment based on the library from `conda.txt`. Then the following things will be just get into that environment and get out by using: `source activate <env's name>` and `source deactivate`
@@ -43,4 +46,8 @@ And for now(16.7.4), /selenium/ada.csv contains urls that are repetitive and <s>
 Conda is a package manager application that quickly installs, runs, and updates packages and their dependencies. The conda command is the primary interface for managing installations of various packages. It can query and search the package index and current installation, create new environments, and install and update packages into existing conda environments. See our Using conda section for more information.
 
 Conda is also an environment manager application. A conda environment is a directory that contains a specific collection of conda packages that you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies, and another environment with NumPy 1.6 for legacy testing. If you change one environment, your other environments are not affected. You can easily activate or deactivate (switch between) these environments. You can also share your environment with someone by giving them a copy of your environment.yaml file. Check [this post](http://conda.pydata.org/docs/intro.html) for installation and more information.
+
+### TextBlob as NL translation
+
+Use TextBlob as a wrapper API for Google translation. Simple `pip install -U textblob` for installation. Try "Goslate" library, but it imposes an API query limit, which causes some inconvienience.
 
