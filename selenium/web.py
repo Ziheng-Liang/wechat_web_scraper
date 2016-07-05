@@ -42,8 +42,12 @@ print articleString
 
 postArr = []
 postArr = re.findall(r'href="(http:\/\/mp\..*?)"', articleString)
-print postArr
+print 'Grabbing ' + str(len(postArr)) + 'urls from website...'
 
+### Remove duplicates from python list.
+postArr = list(set(postArr))
+print postArr
+print 'After duplicates removal, ' + str(len(postArr)) + 'urls remained...'
 
 with open('ada.csv', 'w') as csvfile:
     fieldnames = ['id', 'url']

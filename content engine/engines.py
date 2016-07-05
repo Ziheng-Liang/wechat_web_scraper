@@ -48,7 +48,7 @@ class ContentEngine(object):
         :return: Nothin!
         """
         tf = TfidfVectorizer(analyzer='word', ngram_range=(1, 3), min_df=0, stop_words='english')
-        tfidf_matrix = tf.fit_transform(ds['description'])
+        tfidf_matrix = tf.fit_transform(ds['content'])
 
         cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix)
 
