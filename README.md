@@ -1,3 +1,15 @@
+## Example Usage && Demo
+
+- Scraping. I scrape all articles from wechat page(see below) using selenium:
+![collections](http://ww3.sinaimg.cn/large/72f96cbagw1f5jos85vunj21kw0sx7bo.jpg)
+
+- Training. `curl -X GET -H "X-API-TOKEN: <api-token>" -H "Content-Type: application/json; charset=utf-8" http://127.0.0.1:5000/train -d "{\"data-url\": \"ada-content-en.csv\"}"`. Only using a correct api-token can trigger the machine training(with the below image messege shown).
+![training finished](http://ww4.sinaimg.cn/large/72f96cbagw1f5jowfjtuyj20eo00y3yl.jpg)
+
+- Predicting. `curl -X POST -H "X-API-TOKEN: <api-token>" -H "Content-Type: application/json; charset=utf-8" http://127.0.0.1:5000/predict -d "{\"item\":1,\"num\":10,\"data-url\": \"ada-content-en.csv\"}"`. Will receive something like:
+![predicting finished](http://ww1.sinaimg.cn/large/72f96cbagw1f5jozydqf6j20ym0t4aji.jpg)
+
+
 ## Dependency
 
 ### scraper
