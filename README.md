@@ -14,7 +14,7 @@
 
 ### scraper
 
-Install selenium, run `brew install selenium-server-standalone`, and chromeDriver.
+Install selenium, run `pip install selenium`, and chromeDriver.
 
 ### content engine
 
