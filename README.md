@@ -35,9 +35,9 @@ Then, need to install redis on mac to be tested in local environment. Use `ps au
 
 ## TODOs
 
-After collecting all post url into csv file, we trace up to its pointing article page and scrape for the first three paragraphs(in case of not choking redis for too much content?), then use google translate to make it in English and do TF-IDF training. 
+✔️After collecting all post url into csv file, we trace up to its pointing article page and scrape for the first three paragraphs(in case of not choking redis for too much content?), then use google translate to make it in English and do TF-IDF training. 
 
-And for now(16.7.4), /selenium/ada.csv contains urls that are repetitive and <s>"wrong"(contains "&amp;" symbols e.t.c)</s>, need later update.
+And for now(16.7.4), /selenium/ada.csv contains urls <s>that are repetitive</s> and <s>"wrong"(contains "&amp;" symbols e.t.c)</s>, need later update.
 
 ## Side Notes
 
