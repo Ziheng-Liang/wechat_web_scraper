@@ -19,13 +19,17 @@ def url2content(url):
 
 	visible_texts = filter(visible, texts)
 
-	print visible_texts
-
-	# for visible_text in visible_texts:
-	# 	print visible_text.encode('utf-8')
+	# print visible_texts
 
 	def removeSpace(string):
 		return string.replace("\n", "")
+
+	# for visible_text in map(removeSpace, visible_texts):
+		# print visible_text.encode('utf-8')
+	
+	### From manually experiments, I find that the [0] refers to an link script tag, [1] refers to article title. [8] refers to the date, and [9] refers to the author.
+	for i in range(1, 10):
+		print filter(bool, map(removeSpace, visible_texts))[i].encode('utf-8')
 
 	combined_string = ''.join(map(removeSpace, visible_texts))
 
