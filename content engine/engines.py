@@ -61,7 +61,13 @@ class ContentEngine(object):
             flattened = sum(similar_items[1:], ())
             self._r.zadd(self.SIMKEY % row['id'], *flattened)
 
-    def predict(self, item_id, num):
+    def search(self, ds, results, rank):
+        for indx, row in ds.iterrows():
+            if str(row['id']) == results[rank][0]:
+                info("NO." + str(rank) + " : " + row['title'] + " similarity score: " + str(results[rank][1]))
+                break
+
+    def predict(self, item_id, num, data_source):
         """
         Couldn't be simpler! Just retrieves the similar items and their 'score' from redis.
 
@@ -70,7 +76,19 @@ class ContentEngine(object):
         :return: A list of lists like: [["19", 0.2203], ["494", 0.1693], ...]. The first item in each sub-list is
         the item ID and the second is the similarity score. Sorted by similarity score, descending.
         """
-        return self._r.zrange(self.SIMKEY % item_id, 0, num-1, withscores=True, desc=True)
+        results = self._r.zrange(self.SIMKEY % item_id, 0, num-1, withscores=True, desc=True)
+
+        ds = pd.read_csv(data_source)
+        for indx, row in ds.iterrows():
+            if str(row['id']) == item_id:
+                info("Matching for: " + row['title'])
+                break
+
+        for i in range(2):
+            self.search(ds, results, i)
+
+        return results
+
 
 
 content_engine = ContentEngine()

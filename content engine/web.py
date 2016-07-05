@@ -21,9 +21,11 @@ def predict():
     from engines import content_engine
     item = request.data.get('item')
     num_predictions = request.data.get('num', 10)
+    data_url = request.data.get('data-url', None)
+    print 'hi'
     if not item:
         return []
-    return content_engine.predict(str(item), num_predictions)
+    return content_engine.predict(str(item), num_predictions, data_url)
 
 
 @app.route('/train')
