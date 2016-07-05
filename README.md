@@ -49,5 +49,9 @@ Conda is also an environment manager application. A conda environment is a direc
 
 ### TextBlob as NL translation
 
-Use TextBlob as a wrapper API for Google translation. Simple `pip install -U textblob` for installation. Try "Goslate" library, but it imposes an API query limit, which causes some inconvienience.
+Use TextBlob as a wrapper API for Google translation. Simple `pip install -U textblob` for installation. Try "Goslate" library, but it imposes an API query limit, which causes some inconvienience. Check [this post](https://pypi.python.org/pypi/textblob) for more information.
+
+### Read & Write files with .csv
+
+Check [this post](https://docs.python.org/2/library/csv.html) for more information.
 

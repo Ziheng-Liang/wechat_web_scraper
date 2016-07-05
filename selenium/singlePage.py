@@ -19,6 +19,8 @@ def url2content(url):
 
 	visible_texts = filter(visible, texts)
 
+	print visible_texts
+
 	# for visible_text in visible_texts:
 	# 	print visible_text.encode('utf-8')
 
