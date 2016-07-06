@@ -45,11 +45,17 @@ List all python dependencies in `conda.txt`, then run `conda create -n <virtual 
 
 Then, need to install redis on mac to be tested in local environment. Use `ps aux | grep redis` to check if redis server is running. If it's not running, use the following command `nohup redis-server &` to start a redis-server process and let it run in background.
 
+### web client
+
+Next step, build a simple web client that allows users to upload a chunk of texts and submit, then I translate that texts into English and store in one public.csv file, then merge with ada-content-en.csv and do the TF-IDF again. Then give back a list of similar post.
+
 ## TODOs
 
 ✔️After collecting all post url into csv file, we trace up to its pointing article page and scrape for the first three paragraphs(in case of not choking redis for too much content?), then use google translate to make it in English and do TF-IDF training. 
 
 And for now(16.7.4), /selenium/ada.csv contains urls <s>that are repetitive</s> and <s>"wrong"(contains "&amp;" symbols e.t.c)</s>, need later update.
+
+Build a simple web client with node.js and create a sub process that runs with python script that translates it into english.
 
 ## Side Notes
 
