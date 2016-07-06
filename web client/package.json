@@ -1,0 +1,15 @@
+{
+  "name": "web-client",
+  "version": "1.0.0",
+  "description": "send texts back to node server",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shunzhe Yu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
