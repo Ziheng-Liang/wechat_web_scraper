@@ -26,8 +26,8 @@ app.post('/ada', function(req, res) {
 	  resultString += data.toString();
 	});
 	py.stdout.on('end', function(){
-	  console.log('Translated texts: ', resultString);
-	  log += "Translated texts: " + resultString;
+	  // console.log('Translated texts: ', resultString);
+	  log += resultString;
 	  res.send(log);
 	});
 	py.stdin.write(JSON.stringify(data));

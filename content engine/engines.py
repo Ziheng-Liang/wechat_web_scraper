@@ -71,7 +71,7 @@ class ContentEngine(object):
         """
         Couldn't be simpler! Just retrieves the similar items and their 'score' from redis.
 
-        :param item_id: string
+        :param item_id: string, if id == -1, meaning predict for the last one!!
         :param num: number of similar items to return
         :return: A list of lists like: [["19", 0.2203], ["494", 0.1693], ...]. The first item in each sub-list is
         the item ID and the second is the similarity score. Sorted by similarity score, descending.

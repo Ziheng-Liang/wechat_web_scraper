@@ -21,11 +21,20 @@ def token_auth(f):
 def predict():
     from engines import content_engine
     item = request.data.get('item')
+    realID = item
+    # if item == -1, means prediction for the last row.
+    if item == '-1':
+        with open('backup.csv') as source:
+            reader = csv.DictReader(source.read().splitlines())
+            realID = str(len(list(reader)) - 1)
+
     num_predictions = request.data.get('num', 10)
     data_url = request.data.get('data-url', None)
-    if not item:
+    if not realID:
         return []
-    return content_engine.predict(str(item), num_predictions, data_url)
+    
+    # For now, only returns a nested list of the top num of post and their scores, need more detailed loggin info!
+    return content_engine.predict(str(realID), int(num_predictions), data_url)
 
 
 @app.route('/train')
