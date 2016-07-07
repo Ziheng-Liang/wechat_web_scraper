@@ -47,7 +47,7 @@ Then, need to install redis on mac to be tested in local environment(`brew insta
 
 ### web client
 
-Next step, build a simple web client that allows users to upload a chunk of texts and submit, then I translate that texts into English and store in one public.csv file, then merge with ada-content-en.csv and do the TF-IDF again. Then give back a list of similar post.
+Next step, build a simple web client that allows users to upload a chunk of texts and submit, then I translate that texts into English and store in one public.csv file, then merge with ada-content-en.csv and do the TF-IDF again. Then give back a list of similar post. Web node app will spawn a child process that translate texts and construct http calls to engine server, which re-train and predict with new-coming text. Check [this post](http://www.sohamkamani.com/blog/2015/08/21/python-nodejs-comm/) for more information about how to communicate between python and node(with child_process package).
 
 ## TODOs
 
