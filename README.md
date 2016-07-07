@@ -41,7 +41,7 @@ With all urls in place, we use beautifulsoup to extract all nested texts from ar
 
 ### content engine
 
-List all python dependencies in `conda.txt`, then run `conda create -n <virtual env's name> --file conda.txt` to create a new environment based on the library from `conda.txt`. Then the following things will be just get into that environment and get out by using: `source activate <env's name>` and `source deactivate`
+List all python dependencies in `conda.txt`, then run `conda create -n <virtual env's name> --file conda.txt` to create a new environment based on the library from `conda.txt`. Then the following things will be just get into that environment and get out by using: `source activate <env's name>` and `source deactivate`. Check [this post](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/) for more information about how to remove an environment, note that with conda, we can change the python version when we create conda virtual environment.
 
 Then, need to install redis on mac to be tested in local environment. Use `ps aux | grep redis` to check if redis server is running. If it's not running, use the following command `nohup redis-server &` to start a redis-server process and let it run in background.
 
