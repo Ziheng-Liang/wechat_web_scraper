@@ -51,11 +51,11 @@ Next step, build a simple web client that allows users to upload a chunk of text
 
 ## TODOs
 
-✔️After collecting all post url into csv file, we trace up to its pointing article page and scrape for the first three paragraphs(in case of not choking redis for too much content?), then use google translate to make it in English and do TF-IDF training. 
+✔️(2016.7.4)After collecting all post url into csv file, we trace up to its pointing article page and scrape for the first three paragraphs(in case of not choking redis for too much content?), then use google translate to make it in English and do TF-IDF training. 
 
 And for now(16.7.4), /selenium/ada.csv contains urls <s>that are repetitive</s> and <s>"wrong"(contains "&amp;" symbols e.t.c)</s>, need later update.
 
-Build a simple web client with node.js and create a sub process that runs with python script that translates it into english.
+✔️(2016.7.6)Build a simple web client with node.js and create a sub process that runs with python script that translates it into english.
 
 ## Side Notes
 
