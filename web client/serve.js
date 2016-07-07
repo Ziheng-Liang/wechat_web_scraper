@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/ada', function(req, res) {
 	//start.js
 	var spawn = require('child_process').spawn,
-	    py    = spawn('python', ['compute_input.py']),
+	    py    = spawn('python', ['translate.py']),
 	    // data = [1,2,3,4,5,6,7,8,9],
 	    data = req.body.description
 	    dataString = '';

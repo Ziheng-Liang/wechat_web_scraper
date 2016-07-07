@@ -13,6 +13,7 @@ def main():
     #get our data as an array from read_in()
     lines = read_in()
     chinese_blob = TextBlob(lines)
+    en_content = chinese_blob.translate(from_lang="zh-CN", to='en')
     #create a numpy array
     # np_lines = np.array(lines)
 
@@ -21,7 +22,7 @@ def main():
 
     #return the sum to the output stream
     # print lines_sum
-    print lines
+    print en_content
 
 #start process
 if __name__ == '__main__':
